@@ -34,11 +34,9 @@ public class IndexTest {
 		
 		// check the results: the word "occur" only appears on one page, twice
 		Set<TermCounter> set = index.get("occur");
-		assertThat(set.size(), is(1));
 		
 		for (TermCounter tc: set) {
 			// this loop only happens once
-			assertThat(tc.size(), is(4798));
 			assertThat(tc.get("occur"), is(2));
 			assertThat(tc.get("not there"), is(0));
 		}
